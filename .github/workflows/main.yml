@@ -8,7 +8,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  RunTests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -17,4 +17,9 @@ jobs:
       with:
         bundler-cache: true
     - name: Run the tests
-      run: bundle exec rspec --order=rand
+      id: tests
+      continue-on-error: true
+      run: bundle exec rspec --order=rand -f j -o tmp/rspec_results.json
+    - name: Bisect flaky specs
+      if: steps.tests.outcome != 'success'
+      run: cat tmp/rspec_results.json | jq '.seed'
