@@ -22,4 +22,4 @@ jobs:
       run: bundle exec rspec --order=rand --seed=55702 -f j -o tmp/rspec_results.json
     - name: Bisect flaky specs
       if: steps.tests.outcome != 'success'
-      run: cat tmp/rspec_results.json | jq '.seed'
+      run: bundle exec rspec --seed $(cat tmp/rspec_results.json | jq '.seed') --bisect
