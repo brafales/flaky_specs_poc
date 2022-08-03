@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reqbin.com/echo/get/json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - reqbin.com
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 03 Aug 2022 14:27:46 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '19'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Last-Modified:
+      - Wed, 03 Aug 2022 13:31:23 GMT
+      Cache-Control:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - HIT
+      Age:
+      - '1316'
+      Accept-Ranges:
+      - bytes
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=kJfY5YdTeA3VqiaV80527kTheVWxJBfBZ3wRekwqk9ALt4ygxvcE7bR%2F8nka%2Bgfyr1BIJJiYN6vcMQfgLCW%2BDjd0frq9Hd7NmAmOa1YfHg5krpRQl48oTVmTn54%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Vary:
+      - Accept-Encoding
+      Expect-Ct:
+      - max-age=86400, enforce
+      Referrer-Policy:
+      - same-origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 734fbc66ae01b379-PRG
+    body:
+      encoding: UTF-8
+      string: '{"success":"true"}
+
+        '
+  recorded_at: Wed, 03 Aug 2022 14:27:46 GMT
+recorded_with: VCR 6.1.0
